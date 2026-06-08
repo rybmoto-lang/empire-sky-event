@@ -43,19 +43,19 @@ export default function ImperiaEventBattleLanding() {
   };
 
   return (
-    <div className="scroll-smooth bg-black text-white min-h-screen font-[system-ui,-apple-system,BlinkMacSystemFont,'SF_Pro_Display','SF_Pro_Text','Helvetica_Neue',Arial,sans-serif] antialiased tracking-[-0.02em]">
+    <div className="scroll-smooth min-h-screen bg-[#DDD4C6] font-[system-ui,-apple-system,BlinkMacSystemFont,'SF_Pro_Display','SF_Pro_Text','Helvetica_Neue',Arial,sans-serif] antialiased tracking-[-0.02em]">
       <header className="fixed top-0 left-0 right-0 z-50 px-4 md:px-8 pt-4">
-  <div className="mx-auto flex h-[96px] max-w-7xl items-center justify-between rounded-full border border-white/10 bg-black/85 px-5 md:px-8 shadow-[0_20px_80px_rgba(0,0,0,0.45)] backdrop-blur-xl">
+  <div className="mx-auto flex h-[86px] max-w-7xl items-center justify-between rounded-full border border-white/10 bg-black/85 px-5 md:px-7 shadow-[0_20px_80px_rgba(0,0,0,0.45)] backdrop-blur-xl">
     
     <div className="flex items-center gap-4">
       <img
         src="/logo-new.png"
         alt="Imperia Sky Event"
-        className="h-[118px] w-auto object-contain brightness-[1.18] contrast-[1.08] saturate-[1.08] drop-shadow-[0_0_18px_rgba(255,220,140,0.18)]"
+        className="h-[104px] w-auto object-contain brightness-[1.18] contrast-[1.08] saturate-[1.08] drop-shadow-[0_0_18px_rgba(255,220,140,0.18)]"
       />
     </div>
 
-    <nav className="hidden md:flex min-w-[720px] items-center justify-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-2 text-[22px] font-light tracking-[-0.025em] text-zinc-300">
+    <nav className="hidden md:flex min-w-[720px] items-center justify-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-3 py-1.5 text-[21px] font-light tracking-[-0.025em] text-zinc-300">
       {[
         ['Услуги', '#services'],
         ['Кейсы', '#cases'],
@@ -66,32 +66,26 @@ export default function ImperiaEventBattleLanding() {
         <a
           key={item}
           href={href}
-          className="rounded-full px-6 py-[12px] transition hover:bg-white/10 hover:text-white"
+          className="rounded-full px-5 py-[10px] transition hover:bg-white/10 hover:text-white"
         >
           {item}
         </a>
       ))}
     </nav>
 
-    <div className="hidden md:flex items-center gap-4">
-      <div className="text-right text-[18px] leading-[1.05] tracking-[-0.03em] font-light">
-        <div className="text-white font-light">
-          +7 995 634-44-04
-        </div>
-
-        <div className="text-zinc-400 text-[18px] tracking-[-0.03em] mt-1 font-light">
-          MAX / Telegram
-        </div>
-      </div>
-
-      <Button onClick={() => setIsQuizOpen(true)} className="h-[90px] rounded-full border border-amber-200/20 bg-amber-300/90 backdrop-blur-md text-black px-8 text-[20px] font-normal tracking-[-0.03em] leading-[1.05] hover:bg-amber-200 transition-all shadow-[0_8px_40px_rgba(255,210,120,0.18)]">
-        Обсудить<br/>мероприятие
+    <div className="hidden md:flex items-center">
+      <Button onClick={() => setIsQuizOpen(true)} className="h-[72px] shrink-0 whitespace-nowrap rounded-full border border-amber-200/20 bg-amber-300/90 px-8 py-0 text-black hover:bg-amber-200 transition-all shadow-[0_8px_40px_rgba(255,210,120,0.18)]">
+        <span className="flex flex-col items-center justify-center text-center leading-[1.02] tracking-[-0.03em]">
+          <span className="text-[20px] font-normal">+7 995 634-44-04</span>
+          <span className="mt-0.5 text-[15px] font-light text-black/55">MAX / Telegram</span>
+        </span>
       </Button>
     </div>
 
   </div>
 </header>
 
+      <main className="relative z-10 bg-black text-white shadow-[0_48px_120px_rgba(0,0,0,0.38)]">
       <section className="min-h-screen px-8 md:px-20 pt-40 pb-0 flex flex-col justify-center relative overflow-hidden bg-black">
         <div
           className="absolute inset-0 bg-cover bg-center scale-105"
@@ -150,21 +144,34 @@ export default function ImperiaEventBattleLanding() {
         </div>
       </section>
 
-      <section id="cases" className="scroll-mt-28 bg-zinc-950 px-8 py-28 md:px-20 md:py-32">
-        <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.03] px-5 py-2 text-[15px] font-light tracking-[0.18em] text-zinc-300 backdrop-blur-md">
-          <div className="h-2 w-2 rounded-full bg-amber-300 shadow-[0_0_18px_rgba(255,210,120,0.9)]"></div>
-          НАШИ КЕЙСЫ
-        </div>
-        
-        <div className="grid md:grid-cols-5 gap-6">
-          {cases.map((c, i) => (
-            <Card key={i} className="group bg-black border border-white/5 rounded-3xl transition-all duration-500 hover:-translate-y-2 hover:border-amber-300/20 hover:shadow-[0_20px_80px_rgba(255,190,110,0.06)]">
-              <CardContent className="p-8">
-                <div className="text-xl mb-3">{c[0]}</div>
-                <div className="text-zinc-500">{c[1]}</div>
-              </CardContent>
-            </Card>
-          ))}
+      <section id="cases" className="scroll-mt-28 relative overflow-hidden bg-zinc-950 px-8 py-28 md:px-20 md:py-32">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          src="/cases-bg.mp4"
+          className="absolute inset-0 z-0 h-full w-full object-cover"
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 z-[1] bg-black/65" />
+
+        <div className="relative z-10">
+          <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.03] px-5 py-2 text-[15px] font-light tracking-[0.18em] text-zinc-300 backdrop-blur-md">
+            <div className="h-2 w-2 rounded-full bg-amber-300 shadow-[0_0_18px_rgba(255,210,120,0.9)]"></div>
+            НАШИ КЕЙСЫ
+          </div>
+          
+          <div className="grid md:grid-cols-5 gap-6">
+            {cases.map((c, i) => (
+              <Card key={i} className="group rounded-[28px] border border-white/10 bg-black/35 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-amber-300/30 hover:bg-black/45 hover:shadow-[0_24px_90px_rgba(255,190,110,0.10)]">
+                <CardContent className="p-9 md:p-10">
+                  <div className="mb-3 text-2xl">{c[0]}</div>
+                  <div className="text-[17px] text-zinc-400">{c[1]}</div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -307,58 +314,61 @@ export default function ImperiaEventBattleLanding() {
           </div>
         </div>
       </section>
+      </main>
 
-      <footer id="contacts" className="scroll-mt-28 relative overflow-hidden border-t border-white/10 bg-black px-8 py-20 md:px-20 md:py-24">
-        <div className="absolute left-[-8%] top-[20%] h-[320px] w-[320px] rounded-full bg-amber-300/5 blur-[130px]"></div>
-        <div className="absolute right-[-10%] bottom-[-20%] h-[360px] w-[360px] rounded-full bg-white/5 blur-[140px]"></div>
+      <div id="contacts" className="relative h-[82vh] scroll-mt-28 bg-[#DDD4C6]">
+        <footer className="fixed inset-x-0 bottom-0 z-0 h-[82vh] overflow-y-auto bg-[#DDD4C6] px-8 py-20 text-[#151515] md:px-20 md:py-24">
+          <div className="pointer-events-none absolute left-[-8%] top-[20%] h-[320px] w-[320px] rounded-full bg-amber-300/5 opacity-0"></div>
+          <div className="pointer-events-none absolute right-[-10%] bottom-[-20%] h-[360px] w-[360px] rounded-full bg-white/5 opacity-0"></div>
 
-        <div className="mx-auto max-w-7xl">
-          <div className="mb-14 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.03] px-5 py-2 text-[15px] font-light tracking-[0.18em] text-zinc-300 backdrop-blur-md">
-            <div className="h-2 w-2 rounded-full bg-amber-300 shadow-[0_0_18px_rgba(255,210,120,0.9)]"></div>
-            КОНТАКТЫ
-          </div>
+          <div className="relative mx-auto max-w-7xl">
+            <div className="mb-14 inline-flex items-center gap-3 rounded-full border border-black/10 bg-black/[0.035] px-5 py-2 text-[15px] font-light tracking-[0.18em] text-black/65">
+              <div className="h-2 w-2 rounded-full bg-amber-600"></div>
+              КОНТАКТЫ
+            </div>
 
-          <div className="grid gap-12 md:grid-cols-[1.15fr_0.85fr] md:items-start">
-            <div className="rounded-[40px] border border-white/10 bg-zinc-950/60 p-8 md:p-10 backdrop-blur-md">
-              <p className="max-w-2xl text-[28px] md:text-[34px] font-extralight leading-[1.15] tracking-[-0.05em] text-white">
-                Личное общение в чате и по телефону — без роботов, чат-ботов и автоответчиков.
-              </p>
+            <div className="grid gap-12 md:grid-cols-[1.15fr_0.85fr] md:items-start">
+              <div className="rounded-[40px] border border-black/10 bg-white/[0.20] p-8 md:p-10">
+                <p className="max-w-2xl text-[28px] md:text-[34px] font-extralight leading-[1.15] tracking-[-0.05em] text-[#151515]">
+                  Личное общение в чате и по телефону — без роботов, чат-ботов и автоответчиков.
+                </p>
 
-              <div className="mt-10 grid gap-8 md:grid-cols-2">
-                <div>
-                  <div className="mb-3 text-[14px] font-light uppercase tracking-[0.22em] text-amber-300/80">Телефон</div>
-                  <a href="tel:+79956344404" className="text-[28px] md:text-[30px] font-extralight tracking-[-0.04em] text-white transition hover:text-amber-200">
-                    +7 995 634-44-04
-                  </a>
-                  <div className="mt-3 text-[18px] font-light tracking-[-0.03em] text-zinc-400">Telegram / WhatsApp / Max</div>
+                <div className="mt-10 grid gap-8 md:grid-cols-2">
+                  <div>
+                    <div className="mb-3 text-[14px] font-light uppercase tracking-[0.22em] text-amber-700/80">Телефон</div>
+                    <a href="tel:+79956344404" className="text-[28px] md:text-[30px] font-extralight tracking-[-0.04em] text-[#151515] transition hover:text-amber-700">
+                      +7 995 634-44-04
+                    </a>
+                    <div className="mt-3 text-[18px] font-light tracking-[-0.03em] text-black/55">Telegram / WhatsApp / Max</div>
+                  </div>
+
+                  <div>
+                    <div className="mb-3 text-[14px] font-light uppercase tracking-[0.22em] text-amber-700/80">E-mail</div>
+                    <a href="mailto:info@impereskyevent.ru" className="text-[28px] md:text-[30px] font-extralight tracking-[-0.04em] text-[#151515] transition hover:text-amber-700 break-all">
+                      info@impereskyevent.ru
+                    </a>
+                  </div>
                 </div>
+              </div>
 
-                <div>
-                  <div className="mb-3 text-[14px] font-light uppercase tracking-[0.22em] text-amber-300/80">E-mail</div>
-                  <a href="mailto:info@impereskyevent.ru" className="text-[28px] md:text-[30px] font-extralight tracking-[-0.04em] text-white transition hover:text-amber-200 break-all">
-                    info@impereskyevent.ru
-                  </a>
+              <div className="rounded-[40px] border border-black/10 bg-black/[0.035] p-8 md:p-10">
+                <div className="mb-7 text-[14px] font-light uppercase tracking-[0.22em] text-amber-700/80">Документы</div>
+                <div className="flex flex-col gap-4 text-[18px] font-light tracking-[-0.03em] text-black/60">
+                  <a href="/requisites.pdf" target="_blank" rel="noopener noreferrer" className="border-b border-black/10 pb-4 transition hover:text-black">Реквизиты ООО «Империя Скай Ивент»</a>
+                  <a href="/privacy.pdf" target="_blank" rel="noopener noreferrer" className="border-b border-black/10 pb-4 transition hover:text-black">Конфиденциальность</a>
+                  <a href="/user-agreement.pdf" target="_blank" rel="noopener noreferrer" className="border-b border-black/10 pb-4 transition hover:text-black">Согласие пользователя</a>
+                  <a href="/personal-data-consent.pdf" target="_blank" rel="noopener noreferrer" className="transition hover:text-black">Согласие пользователя на обработку персональных данных</a>
                 </div>
               </div>
             </div>
 
-            <div className="rounded-[40px] border border-white/10 bg-white/[0.03] p-8 md:p-10 backdrop-blur-md">
-              <div className="mb-7 text-[14px] font-light uppercase tracking-[0.22em] text-amber-300/80">Документы</div>
-              <div className="flex flex-col gap-4 text-[18px] font-light tracking-[-0.03em] text-zinc-400">
-                <a href="/requisites.pdf" target="_blank" rel="noopener noreferrer" className="border-b border-white/10 pb-4 transition hover:text-white">Реквизиты ООО «Империя Скай Ивент»</a>
-                <a href="/privacy.pdf" target="_blank" rel="noopener noreferrer" className="border-b border-white/10 pb-4 transition hover:text-white">Конфиденциальность</a>
-                <a href="/user-agreement.pdf" target="_blank" rel="noopener noreferrer" className="border-b border-white/10 pb-4 transition hover:text-white">Согласие пользователя</a>
-                <a href="/personal-data-consent.pdf" target="_blank" rel="noopener noreferrer" className="transition hover:text-white">Согласие пользователя на обработку персональных данных</a>
-              </div>
+            <div className="mt-12 flex flex-col gap-4 border-t border-black/10 pt-8 text-[16px] font-light tracking-[-0.03em] text-black/45 md:flex-row md:items-center md:justify-between">
+              <div>Imperia Sky Event</div>
+              <div>©2026 Empireskyevent</div>
             </div>
           </div>
-
-          <div className="mt-12 flex flex-col gap-4 border-t border-white/10 pt-8 text-[16px] font-light tracking-[-0.03em] text-zinc-500 md:flex-row md:items-center md:justify-between">
-            <div>Imperia Sky Event</div>
-            <div>©2026 Empireskyevent</div>
-          </div>
-        </div>
-      </footer>
+        </footer>
+      </div>
 
       
 
