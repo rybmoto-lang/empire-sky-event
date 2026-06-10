@@ -144,36 +144,54 @@ export default function ImperiaEventBattleLanding() {
         </div>
       </section>
 
-      <section id="cases" className="scroll-mt-28 relative overflow-hidden bg-zinc-950 px-8 py-28 md:px-20 md:py-32">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          src="/cases-bg.mp4"
-          className="absolute inset-0 z-0 h-full w-full object-cover"
-          aria-hidden="true"
-        />
-        <div className="absolute inset-0 z-[1] bg-black/65" />
+      <section id="cases" className="relative overflow-hidden bg-zinc-950 px-8 py-24 scroll-mt-28 md:px-20">
+  <video
+    autoPlay
+    muted
+    loop
+    playsInline
+    className="absolute inset-0 z-0 h-full w-full object-cover"
+  >
+    <source src="/cases-bg.mp4" type="video/mp4" />
+  </video>
 
-        <div className="relative z-10">
-          <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.03] px-5 py-2 text-[15px] font-light tracking-[0.18em] text-zinc-300 backdrop-blur-md">
-            <div className="h-2 w-2 rounded-full bg-amber-300 shadow-[0_0_18px_rgba(255,210,120,0.9)]"></div>
-            НАШИ КЕЙСЫ
-          </div>
-          
-          <div className="grid md:grid-cols-5 gap-6">
-            {cases.map((c, i) => (
-              <Card key={i} className="group rounded-[28px] border border-white/10 bg-black/35 backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-amber-300/30 hover:bg-black/45 hover:shadow-[0_24px_90px_rgba(255,190,110,0.10)]">
-                <CardContent className="p-9 md:p-10">
-                  <div className="mb-3 text-2xl">{c[0]}</div>
-                  <div className="text-[17px] text-zinc-400">{c[1]}</div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+  <div className="absolute inset-0 z-[1] bg-black/62" />
+  <div className="absolute inset-0 z-[2] bg-[radial-gradient(circle_at_top_right,rgba(255,210,120,0.14),transparent_34%)]" />
+
+  <div className="relative z-10">
+    <div className="mb-8 inline-flex items-center gap-3 rounded-full border border-white/10 bg-white/[0.03] px-5 py-2 text-[15px] font-light tracking-[0.18em] text-zinc-300 backdrop-blur-md">
+      <div className="h-2 w-2 rounded-full bg-amber-300 shadow-[0_0_18px_rgba(255,210,120,0.9)]"></div>
+      НАШИ КЕЙСЫ
+    </div>
+
+    <div className="-mx-8 flex snap-x snap-mandatory gap-8 overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden px-8 pt-4 pb-8 md:-mx-20 md:px-20">
+      {cases.map((c, i) => (
+        <Card
+          key={i}
+          className="group min-w-[72vw] snap-center overflow-hidden rounded-[34px] border border-white/10 bg-black/5 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-amber-200/35 hover:bg-black/15 sm:min-w-[500px] md:min-w-540px] lg:min-w-[590px]"
+        >
+          <CardContent className="p-0">
+            <div className="p-4">
+              <div
+                className="aspect-[16/7] w-full rounded-[24px] border border-white/10 bg-zinc-900 bg-cover bg-center shadow-[inset_0_0_0_1px_rgba(255,235,190,0.12)]"
+                style={{ backgroundImage: `url(/cases/case-${i + 1}.jpg)` }}
+              />
+            </div>
+
+            <div className="px-7 pb-8 pt-3 md:px-8">
+              <div className="text-2xl font-extralight tracking-[-0.045em] text-white md:text-3xl">
+                {c[0]}
+              </div>
+              <div className="mt-3 text-lg font-light tracking-[-0.03em] text-zinc-300">
+                {c[1]}
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>
 
       <section id="about" className="scroll-mt-28 relative overflow-hidden bg-black px-8 py-28 md:px-20 md:py-32">
         <div className="absolute right-[-12%] top-[12%] h-[360px] w-[360px] rounded-full bg-amber-300/5 blur-[130px]"></div>
